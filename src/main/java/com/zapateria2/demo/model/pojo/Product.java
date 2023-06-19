@@ -1,4 +1,4 @@
-package com.zapateria2.demo.model.pojo;
+/*package com.zapateria2.demo.model.pojo;
 
 import jakarta.persistence.GeneratedValue;
 import jakarta.persistence.GenerationType;
@@ -18,3 +18,4 @@ public class Product {
 	@GeneratedValue(strategy=GenerationType.AUTO)
 	private int id;
 }
+*/

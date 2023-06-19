@@ -1,4 +1,4 @@
-package com.zapateria2.demo.data;
+/*package com.zapateria2.demo.data;
 import java.util.Optional;
 
 import org.springframework.data.jpa.repository.JpaRepository;
@@ -10,7 +10,7 @@ public interface LineInvoiceRepository extends JpaRepository<LineInvoice, Long> 
 }
 
 
-
+*/
 
 
 

@@ -1,4 +1,4 @@
-package com.zapateria2.demo.model.pojo;
+/*package com.zapateria2.demo.model.pojo;
 
 
 import jakarta.persistence.Column;
@@ -56,3 +56,4 @@ public class Invoice {
 		return new Invoice();
 	}
 }
+*/

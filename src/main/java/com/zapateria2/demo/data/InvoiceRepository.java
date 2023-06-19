@@ -1,4 +1,4 @@
-package com.zapateria2.demo.data;
+/*package com.zapateria2.demo.data;
 
 import java.util.Optional;
 
@@ -10,3 +10,4 @@ import com.zapateria2.demo.model.pojo.Invoice;
 public interface InvoiceRepository extends JpaRepository<Invoice, Long> {
 	Optional<Invoice> findById(Long invoiceId);
 }
+*/

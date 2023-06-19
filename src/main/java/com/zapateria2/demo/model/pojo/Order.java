@@ -1,4 +1,4 @@
-package com.zapateria2.demo.model.pojo;
+/*package com.zapateria2.demo.model.pojo;
 
 import jakarta.persistence.Column;
 import jakarta.persistence.Entity;
@@ -58,4 +58,4 @@ public class Order {
 }
 
 
-
+*/
