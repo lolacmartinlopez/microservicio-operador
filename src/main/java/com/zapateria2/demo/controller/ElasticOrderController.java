@@ -25,6 +25,7 @@ public class ElasticOrderController {
 	
 	private final ElasticOrderService service;
 	
+	@CrossOrigin(origins = "*", allowedHeaders = "*")
 	@GetMapping("/elastic/orders")
 	public ResponseEntity<List<ElasticOrder>> getOrders(
 			@RequestParam(required = false) String ref,
@@ -41,6 +42,7 @@ public class ElasticOrderController {
 		}
 	}
 
+	@CrossOrigin(origins = "*", allowedHeaders = "*")
 	@GetMapping("/elastic/orders/{orderId}")
 	public ResponseEntity<ElasticOrder> getOrder(@PathVariable String orderId) {
 

@@ -28,6 +28,7 @@ public class InvoiceController {
 	public void InvoicesController(InvoiceService service) {this.service = service;}
 	
 	
+	@CrossOrigin(origins = "*", allowedHeaders = "*")
 	@GetMapping("/invoices") 
 	public ResponseEntity<List<Invoice>> getInvoices() {
 		List<Invoice> invoices = service.getInvoices(); 
@@ -39,6 +40,7 @@ public class InvoiceController {
 		} 
 	}
 	
+	@CrossOrigin(origins = "*", allowedHeaders = "*")
 	@GetMapping("/invoices/{invoiceId}") 
 	public ResponseEntity<Invoice> getInvoice(@PathVariable int invoiceId) { 
 		Invoice invoice = service.getInvoice(invoiceId); 

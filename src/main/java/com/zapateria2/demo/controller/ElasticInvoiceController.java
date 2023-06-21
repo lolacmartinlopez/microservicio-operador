@@ -25,6 +25,7 @@ public class ElasticInvoiceController {
 	
 	private final ElasticInvoiceService service;
 	
+	@CrossOrigin(origins = "*", allowedHeaders = "*")
 	@GetMapping("/elastic/invoices")
 	public ResponseEntity<List<ElasticInvoice>> getInvoices(
 			@RequestParam(required = false) String num_fac,
@@ -43,6 +44,7 @@ public class ElasticInvoiceController {
 		}
 	}
 
+	@CrossOrigin(origins = "*", allowedHeaders = "*")
 	@GetMapping("/elastic/invoices/{invoiceId}")
 	public ResponseEntity<ElasticInvoice> getInvoice(@PathVariable String invoiceId) {
 
