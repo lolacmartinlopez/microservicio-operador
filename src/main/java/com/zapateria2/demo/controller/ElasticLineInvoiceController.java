@@ -5,6 +5,7 @@ import java.util.List;
 
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
+import org.springframework.web.bind.annotation.CrossOrigin;
 import org.springframework.web.bind.annotation.DeleteMapping;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PathVariable;
@@ -25,6 +26,7 @@ public class ElasticLineInvoiceController {
 	
 private final ElasticLineInvoiceService service;
 	
+	@CrossOrigin(origins = "*", allowedHeaders = "*")
 	@GetMapping("/elastic/lineinvoices")
 	public ResponseEntity<List<ElasticLineInvoice>> getLineInvoices(
 			@RequestParam(required = false) String invoice,
@@ -43,6 +45,7 @@ private final ElasticLineInvoiceService service;
 		}
 	}
 
+	@CrossOrigin(origins = "*", allowedHeaders = "*")
 	@GetMapping("/elastic/lineinvoices/{lineInvoiceId}")
 	public ResponseEntity<ElasticLineInvoice> getLineInvoice(@PathVariable String lineInvoiceId) {
 
@@ -69,6 +72,7 @@ private final ElasticLineInvoiceService service;
 
 	}
 	
+	@CrossOrigin(origins = "*", allowedHeaders = "*")
 	@PostMapping("/elastic/lineinvoices")
 	public ResponseEntity<ElasticLineInvoice> createLineInvoice(@RequestBody CreateLineInvoiceRequest request) {
 		ElasticLineInvoice lineInvoice = service.createLineInvoice(request);

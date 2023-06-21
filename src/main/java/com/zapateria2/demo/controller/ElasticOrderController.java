@@ -5,6 +5,7 @@ import java.util.List;
 
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
+import org.springframework.web.bind.annotation.CrossOrigin;
 import org.springframework.web.bind.annotation.DeleteMapping;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PathVariable;
@@ -25,6 +26,7 @@ public class ElasticOrderController {
 	
 	private final ElasticOrderService service;
 	
+	@CrossOrigin(origins = "*", allowedHeaders = "*")
 	@GetMapping("/elastic/orders")
 	public ResponseEntity<List<ElasticOrder>> getOrders(
 			@RequestParam(required = false) String ref,
@@ -41,6 +43,7 @@ public class ElasticOrderController {
 		}
 	}
 
+	@CrossOrigin(origins = "*", allowedHeaders = "*")
 	@GetMapping("/elastic/orders/{orderId}")
 	public ResponseEntity<ElasticOrder> getOrder(@PathVariable String orderId) {
 
@@ -67,6 +70,7 @@ public class ElasticOrderController {
 
 	}
 	
+	@CrossOrigin(origins = "*", allowedHeaders = "*")
 	@PostMapping("/elastic/orders")
 	public ResponseEntity<ElasticOrder> createOrder(@RequestBody CreateOrderRequest request) {
 		ElasticOrder order = service.createOrder(request);

@@ -6,6 +6,7 @@ import java.util.List;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
+import org.springframework.web.bind.annotation.CrossOrigin;
 import org.springframework.web.bind.annotation.DeleteMapping;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PathVariable;
@@ -28,6 +29,7 @@ public class InvoiceController {
 	public void InvoicesController(InvoiceService service) {this.service = service;}
 	
 	
+	@CrossOrigin(origins = "*", allowedHeaders = "*")
 	@GetMapping("/invoices") 
 	public ResponseEntity<List<Invoice>> getInvoices() {
 		List<Invoice> invoices = service.getInvoices(); 
@@ -39,6 +41,7 @@ public class InvoiceController {
 		} 
 	}
 	
+	@CrossOrigin(origins = "*", allowedHeaders = "*")
 	@GetMapping("/invoices/{invoiceId}") 
 	public ResponseEntity<Invoice> getInvoice(@PathVariable int invoiceId) { 
 		Invoice invoice = service.getInvoice(invoiceId); 
@@ -61,6 +64,7 @@ public class InvoiceController {
 		} 
 	}
 	
+	@CrossOrigin(origins = "*", allowedHeaders = "*")
 	@PostMapping("/invoices") 
 	
 	
