@@ -27,7 +27,7 @@ public class ElasticOrderController {
 	private final ElasticOrderService service;
 	
 	@CrossOrigin(origins = "*", allowedHeaders = "*")
-	@GetMapping("/elastic/orders")
+	@GetMapping("/orders")
 	public ResponseEntity<List<ElasticOrder>> getOrders(
 			@RequestParam(required = false) String ref,
 			@RequestParam(required = false) Float baseImponible, 
@@ -44,7 +44,7 @@ public class ElasticOrderController {
 	}
 
 	@CrossOrigin(origins = "*", allowedHeaders = "*")
-	@GetMapping("/elastic/orders/{orderId}")
+	@GetMapping("/orders/{orderId}")
 	public ResponseEntity<ElasticOrder> getOrder(@PathVariable String orderId) {
 
 		ElasticOrder order = service.getOrder(orderId);
@@ -57,7 +57,7 @@ public class ElasticOrderController {
 
 	}
 
-	@DeleteMapping("/elastic/orders/{orderId}")
+	@DeleteMapping("/orders/{orderId}")
 	public ResponseEntity<Void> deleteOrder(@PathVariable String orderId) {
 
 		Boolean removed = service.removeOrder(orderId);
@@ -71,7 +71,7 @@ public class ElasticOrderController {
 	}
 	
 	@CrossOrigin(origins = "*", allowedHeaders = "*")
-	@PostMapping("/elastic/orders")
+	@PostMapping("/orders")
 	public ResponseEntity<ElasticOrder> createOrder(@RequestBody CreateOrderRequest request) {
 		ElasticOrder order = service.createOrder(request);
 		
