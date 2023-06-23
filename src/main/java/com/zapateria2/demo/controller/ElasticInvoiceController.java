@@ -27,7 +27,7 @@ public class ElasticInvoiceController {
 	private final ElasticInvoiceService service;
 	
 	@CrossOrigin(origins = "*", allowedHeaders = "*")
-	@GetMapping("/elastic/invoices")
+	@GetMapping("/invoices")
 	public ResponseEntity<List<ElasticInvoice>> getInvoices(
 			@RequestParam(required = false) String num_fac,
 			@RequestParam(required = false) String date,
@@ -46,7 +46,7 @@ public class ElasticInvoiceController {
 	}
 
 	@CrossOrigin(origins = "*", allowedHeaders = "*")
-	@GetMapping("/elastic/invoices/{invoiceId}")
+	@GetMapping("/invoices/{invoiceId}")
 	public ResponseEntity<ElasticInvoice> getInvoice(@PathVariable String invoiceId) {
 
 		ElasticInvoice invoice = service.getInvoice(invoiceId);
@@ -59,7 +59,7 @@ public class ElasticInvoiceController {
 
 	}
 
-	@DeleteMapping("/elastic/invoices/{invoiceId}")
+	@DeleteMapping("/invoices/{invoiceId}")
 	public ResponseEntity<Void> removeInvoice(@PathVariable String invoiceId) {
 
 		Boolean removed = service.removeInvoice(invoiceId);
@@ -73,7 +73,7 @@ public class ElasticInvoiceController {
 	}
 	
 	@CrossOrigin(origins = "*", allowedHeaders = "*")
-	@PostMapping("/elastic/invoices")
+	@PostMapping("/invoices")
 	public ResponseEntity<ElasticInvoice> createInvoice(@RequestBody CreateInvoiceRequest request) {
 		ElasticInvoice invoice = service.createInvoice(request);
 		
