@@ -27,7 +27,7 @@ public class ElasticLineInvoiceController {
 private final ElasticLineInvoiceService service;
 	
 	@CrossOrigin(origins = "*", allowedHeaders = "*")
-	@GetMapping("/elastic/lineinvoices")
+	@GetMapping("/lineinvoices")
 	public ResponseEntity<List<ElasticLineInvoice>> getLineInvoices(
 			@RequestParam(required = false) String invoice,
 			@RequestParam(required = false) String shoeSize,
@@ -46,7 +46,7 @@ private final ElasticLineInvoiceService service;
 	}
 
 	@CrossOrigin(origins = "*", allowedHeaders = "*")
-	@GetMapping("/elastic/lineinvoices/{lineInvoiceId}")
+	@GetMapping("/lineinvoices/{lineInvoiceId}")
 	public ResponseEntity<ElasticLineInvoice> getLineInvoice(@PathVariable String lineInvoiceId) {
 
 		ElasticLineInvoice lineInvoice = service.getLineInvoice(lineInvoiceId);
@@ -59,7 +59,7 @@ private final ElasticLineInvoiceService service;
 
 	}
 
-	@DeleteMapping("/elastic/lineinvoices/{lineInvoiceId}")
+	@DeleteMapping("/lineinvoices/{lineInvoiceId}")
 	public ResponseEntity<Void> removeLineInvoice(@PathVariable String lineInvoiceId) {
 
 		Boolean removed = service.removeLineInvoice(lineInvoiceId);
@@ -73,7 +73,7 @@ private final ElasticLineInvoiceService service;
 	}
 	
 	@CrossOrigin(origins = "*", allowedHeaders = "*")
-	@PostMapping("/elastic/lineinvoices")
+	@PostMapping("/lineinvoices")
 	public ResponseEntity<ElasticLineInvoice> createLineInvoice(@RequestBody CreateLineInvoiceRequest request) {
 		ElasticLineInvoice lineInvoice = service.createLineInvoice(request);
 		
