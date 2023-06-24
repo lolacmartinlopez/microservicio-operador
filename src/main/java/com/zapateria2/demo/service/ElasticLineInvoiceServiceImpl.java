@@ -68,9 +68,9 @@ public class ElasticLineInvoiceServiceImpl implements ElasticLineInvoiceService{
 			
 			if(decreaseRes == null || !decreaseRes) {
 				repository.deleteLineInvoice(newLineInvoice);
-				return null;
-			} else {
 				return lineInvoice;
+			} else {
+				return newLineInvoice;
 			}
 			 
 		}
