@@ -13,12 +13,6 @@ import lombok.Setter;
 @NoArgsConstructor
 public class CreateLineInvoiceRequest {
 	
-	@JsonProperty("invoice_id")
-	public Integer invoice_id;
-	@JsonProperty("shoe_id")
-	public Integer shoeId;
-	@JsonProperty("size_id")
-	public Integer sizeId;
 	@JsonProperty("elastic_invoice_id")
 	public String ElasticInvoiceId;
 	@JsonProperty("elastic_shoesize_id")
