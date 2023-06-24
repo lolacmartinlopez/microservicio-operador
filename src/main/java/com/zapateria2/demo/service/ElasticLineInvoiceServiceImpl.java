@@ -63,7 +63,7 @@ public class ElasticLineInvoiceServiceImpl implements ElasticLineInvoiceService{
 			lineInvoice.setImporte(request.getImporte());
 			lineInvoice.setIva(request.getIva());
 			
-			ElasticLineInvoice newLineInvoice = repository.saveLineInvoice(lineInvoice);
+			/*ElasticLineInvoice newLineInvoice = repository.saveLineInvoice(lineInvoice);
 			Boolean decreaseRes = buscadorFacade.elasticDecreaseStock(request.getElasticShoeSizeId(), request.getAmount());
 			
 			if(decreaseRes == null || !decreaseRes) {
@@ -72,7 +72,9 @@ public class ElasticLineInvoiceServiceImpl implements ElasticLineInvoiceService{
 			} else {
 				return newLineInvoice;
 			}
-			
+		*/
+		
+				return lineInvoice; 
 		}
 		
 		else {
