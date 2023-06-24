@@ -24,5 +24,4 @@ public class CreateInvoiceRequest {
 	public Float importe;
 	@JsonProperty("elastic_order_id")
 	public String orderIdElastic;
-
 }
