@@ -22,8 +22,6 @@ public class CreateInvoiceRequest {
 	public Float iva;
 	@JsonProperty("importe")
 	public Float importe;
-	@JsonProperty("order_id")
-	public Integer order_id;
 	@JsonProperty("elastic_order_id")
 	public String orderIdElastic;
 
